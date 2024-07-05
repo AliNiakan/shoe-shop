@@ -1,0 +1,18 @@
+.color-circle-container {
+    display: flex;
+}
+
+.color-circle {
+    margin: 15px;
+    cursor: pointer;
+    border: 5px solid white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

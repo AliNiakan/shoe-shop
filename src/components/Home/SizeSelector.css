@@ -1,0 +1,39 @@
+.size-selector {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.size-option {
+    color: #333333;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+}
+
+.size-option:hover {
+    background-color: rgba(24, 125, 165, 0.39);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.size-option.selected {
+    background-color: #00aaff;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.size-selector p {
+    color: #333333;
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 0;
+}
