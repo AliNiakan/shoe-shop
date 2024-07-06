@@ -17,7 +17,7 @@ const Shoe: React.FC<ShoeProps> = ({ imageUrl }) => {
 
     return (
         <div className={`shoe-image-container ${animate ? 'animate' : ''}`}>
-            <img className={`shoe-image ${animate ? 'animate' : ''}`} src={imageUrl} alt="Selected Shoe" />
+            <img className='shoe-image' src={imageUrl} alt="Selected Shoe" />
         </div>
     );
 };
