@@ -8,6 +8,7 @@
     border: 5px solid white;
     width: 35px;
     height: 35px;
+    padding: 19px;
     border-radius: 50%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

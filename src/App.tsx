@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css'
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
 import GlobalStyles from './styles/GlobalStyles';
@@ -10,6 +9,9 @@ import MainLogo from './components/Home/MainLogo';
 import Shoe from './components/Home/Shoe';
 import SizeSelector from './components/Home/SizeSelector';
 import BuyButton from './components/Home/BuyButton';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './styles/reset.css'
+import './styles/App.css'
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -18,13 +20,10 @@ const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
     font-family: Arial, sans-serif;
     height: 100vh; 
     transition: background-color 0.5s ease;
-    
   }
-
-  
 `;
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
   const selectedShoe = useSelector((state: RootState) =>
     state.shoe.shoes.find((shoe) => shoe.id === state.shoe.selectedShoeId)
   );
@@ -33,16 +32,28 @@ const App: React.FC = () => {
 
   return (
     <div className='app-container'>
-      <Header />
       <DynamicBackground backgroundColor={backgroundColor} />
-      <GlobalStyles />
       <MainLogo />
-      <BuyButton />
-
+      <GlobalStyles />
       {selectedShoe && <Shoe imageUrl={imageUrl} />}
-      <SizeSelector />
-      <ShoeSelector />
+      <div className='selectors'>
+        <SizeSelector />
+        <ShoeSelector />
+      </div>
+      <BuyButton />
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+      </Routes>
+    </Router>
   );
 };
 
