@@ -12,6 +12,7 @@ import BuyButton from './components/Home/BuyButton';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/reset.css'
 import './styles/App.css'
+import CartPage from './components/Cart/CartPage';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -31,10 +32,9 @@ const Home: React.FC = () => {
   const imageUrl = selectedShoe?.imageUrl || '';
 
   return (
-    <div className='app-container'>
+    <div >
       <DynamicBackground backgroundColor={backgroundColor} />
       <MainLogo />
-      <GlobalStyles />
       {selectedShoe && <Shoe imageUrl={imageUrl} />}
       <div className='selectors'>
         <SizeSelector />
@@ -49,8 +49,10 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
+      <GlobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<CartPage />} />
 
       </Routes>
     </Router>
