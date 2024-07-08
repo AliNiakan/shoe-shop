@@ -4,4 +4,5 @@ export default interface Shoe {
   colorHex: string;
   imageUrl: string;
   size: number[];
+  price?: number; 
 }

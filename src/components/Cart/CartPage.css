@@ -1,3 +1,140 @@
-body{
+body {
     background-color: #0150a1;
+    color: #fff;
+    /* Added for better readability */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+
+.cart-page {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.cart-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+    background-color: rgba(241, 241, 241, 0.144);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-details {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 15px;
+    transition: padding 0.3s ease-in-out;
+}
+
+.item-details:hover {
+    padding: 20px;
+}
+
+
+.item-image {
+    width: 120px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    animation: rotateImage 5s infinite linear;
+}
+
+.item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.item-price {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.item-actions input {
+    width: 60px;
+    margin-right: 15px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.item-actions input:focus {
+    border-color: #0150a1;
+    outline: none;
+}
+
+.item-actions button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item-actions button:hover {
+    background-color: #ff7875;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .item-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
