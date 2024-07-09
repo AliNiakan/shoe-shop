@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './Shoe.css';
+import './ShoeImage.css';
 
 interface ShoeProps {
     imageUrl: string;
 }
 
-const Shoe: React.FC<ShoeProps> = ({ imageUrl }) => {
+const ShoeImage: React.FC<ShoeProps> = ({ imageUrl }) => {
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
@@ -22,4 +22,4 @@ const Shoe: React.FC<ShoeProps> = ({ imageUrl }) => {
     );
 };
 
-export default Shoe;
+export default ShoeImage;

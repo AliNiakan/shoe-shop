@@ -6,13 +6,15 @@ import ShoeSelector from './components/Home/ShoeSelector';
 import { createGlobalStyle } from 'styled-components';
 import Header from './components/Home/Header';
 import MainLogo from './components/Home/MainLogo';
-import Shoe from './components/Home/Shoe';
+import ShoeImage from './components/Home/ShoeImage';
 import SizeSelector from './components/Home/SizeSelector';
 import BuyButton from './components/Home/BuyButton';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/reset.css'
 import './styles/App.css'
+import Shoe from './models/Shoe';
 import CartPage from './components/Cart/CartPage';
+import { selectShoe } from './store/shoeSlice';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -25,22 +27,21 @@ const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
 `;
 
 const Home: React.FC = () => {
-  const selectedShoe = useSelector((state: RootState) =>
-    state.shoe.shoes.find((shoe) => shoe.id === state.shoe.selectedShoeId)
-  );
+  const selectedShoe: Shoe | null = useSelector((state: RootState) =>
+    state.shoe.shoes.find((shoe) => shoe.id === state.shoe.selectedShoeId) || null
+);
   const backgroundColor = selectedShoe?.colorHex || '#ffffff';
   const imageUrl = selectedShoe?.imageUrl || '';
-
   return (
     <div >
       <DynamicBackground backgroundColor={backgroundColor} />
       <MainLogo />
-      {selectedShoe && <Shoe imageUrl={imageUrl} />}
+      {selectedShoe && <ShoeImage imageUrl={imageUrl} />}
       <div className='selectors'>
         <SizeSelector />
         <ShoeSelector />
       </div>
-      <BuyButton />
+    <BuyButton selectedShoe={selectedShoe} />
     </div>
   );
 };

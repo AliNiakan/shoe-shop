@@ -17,7 +17,7 @@ const initialState: CartState = {
             colorHex: '#0150a1',
             imageUrl: 'https://i.ibb.co/wSzcd82/blue-black.png',
             size: [41, 42, 43],
-            price: 99.99, // Assuming price is added to Shoe type
+            price: 99.99, 
             quantity: 1
         },
         {
@@ -26,7 +26,7 @@ const initialState: CartState = {
             colorHex: '#c30723',
             imageUrl: 'https://i.ibb.co/FhTz5c1/red-black.png',
             size: [40, 41, 42, 43, 44, 45, 46],
-            price: 109.99, // Assuming price is added to Shoe type
+            price: 109.99, 
             quantity: 2
         },
         {
@@ -35,7 +35,7 @@ const initialState: CartState = {
             colorHex: '#bf6f63',
             imageUrl: 'https://i.ibb.co/L9fzStp/pink-white.png',
             size: [41, 42],
-            price: 89.99, // Assuming price is added to Shoe type
+            price: 89.99,
             quantity: 1
         }
     ],
