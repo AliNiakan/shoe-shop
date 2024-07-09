@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 
 const Header: React.FC = () => {
@@ -31,10 +31,10 @@ const Header: React.FC = () => {
 
       <div className='header-panel'>
         <ul>
-          <li onClick={handleCartClick}>
-            <FontAwesomeIcon icon={faList} />
-          </li>
           <li>
+            <FontAwesomeIcon icon={faUser} />
+          </li>
+          <li onClick={handleCartClick}>
             <FontAwesomeIcon icon={faShoppingCart} />
           </li>
         </ul>
