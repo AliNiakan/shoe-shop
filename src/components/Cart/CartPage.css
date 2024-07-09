@@ -1,7 +1,6 @@
 body {
     background-color: #0150a1;
     color: #fff;
-    /* Added for better readability */
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -17,6 +16,16 @@ body {
 
     100% {
         transform: rotate(-20deg);
+    }
+}
+
+@keyframes returnToZero {
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(0deg);
     }
 }
 
@@ -62,7 +71,7 @@ body {
 }
 
 .item-details:hover {
-    padding: 20px;
+    padding: 10px;
 }
 
 
@@ -74,8 +83,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
-    animation: rotateImage 5s infinite linear;
+    animation: rotateImage 5s linear 3, returnToZero 2s linear 1 15s;
 }
+
 
 .item-name {
     font-size: 1.2rem;
