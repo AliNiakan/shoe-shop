@@ -16,6 +16,7 @@ import Shoe from './models/Shoe';
 import CartPage from './components/Cart/CartPage';
 import { selectShoe } from './store/shoeSlice';
 import ModelsPage from './components/Models/ModelsPage';
+import DetailsPage from './components/Details/DetailsPage';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -30,7 +31,7 @@ const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
 const Home: React.FC = () => {
   const selectedShoe: Shoe | null = useSelector((state: RootState) =>
     state.shoe.shoes.find((shoe) => shoe.id === state.shoe.selectedShoeId) || null
-);
+  );
   const backgroundColor = selectedShoe?.colorHex || '#ffffff';
   const imageUrl = selectedShoe?.imageUrl || '';
   return (
@@ -42,7 +43,7 @@ const Home: React.FC = () => {
         <SizeSelector />
         <ShoeSelector />
       </div>
-    <BuyButton selectedShoe={selectedShoe} />
+      <BuyButton selectedShoe={selectedShoe} />
     </div>
   );
 };
@@ -55,8 +56,8 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/models" element={<ModelsPage/>} />
-
+        <Route path="/models" element={<ModelsPage />} />
+        <Route path="/shoe" element={<DetailsPage />} />
       </Routes>
     </Router>
   );

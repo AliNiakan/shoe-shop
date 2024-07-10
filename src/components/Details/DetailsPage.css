@@ -1,0 +1,73 @@
+.details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.details-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.shoe-details-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.shoe-details-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.shoe-details-name {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.shoe-details-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.shoe-details-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.shoe-caption {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    margin: 20px;
+}
+
+.shoe-caption p {
+    font-size: 1.1rem;
+    color: #333333;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .shoe-caption {
+        width: 90%;
+    }
+}
+
+.shoe-not-found,
+.no-shoe-selected {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}

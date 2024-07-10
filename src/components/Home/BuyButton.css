@@ -11,8 +11,7 @@
 
 .buy-button {
     font-family: "Roboto", sans-serif;
-    background-color: transparent;
-    color: white;
+    background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     padding: 15px 30px;
