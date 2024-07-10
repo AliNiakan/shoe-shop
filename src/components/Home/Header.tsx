@@ -13,6 +13,9 @@ const Header: React.FC = () => {
   const handleCartClick = () => {
     navigate('/cart');
   }
+  const handleViewModelsClick = () => {
+    navigate('/models')
+  }
 
   return (
     <div className='header'>
@@ -24,7 +27,7 @@ const Header: React.FC = () => {
           <li onClick={handleHomeClick}>Home</li>
           <li>About</li>
           <li>Contact us</li>
-          <li>View Model</li>
+          <li onClick={handleViewModelsClick}>View Models</li>
           <li>Help me</li>
         </ul>
       </div>

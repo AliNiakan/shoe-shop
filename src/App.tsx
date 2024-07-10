@@ -15,6 +15,7 @@ import './styles/App.css'
 import Shoe from './models/Shoe';
 import CartPage from './components/Cart/CartPage';
 import { selectShoe } from './store/shoeSlice';
+import ModelsPage from './components/Models/ModelsPage';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -54,6 +55,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/models" element={<ModelsPage/>} />
 
       </Routes>
     </Router>
