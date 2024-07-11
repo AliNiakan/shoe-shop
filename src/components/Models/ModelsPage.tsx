@@ -20,7 +20,6 @@ const ModelsPage: React.FC = () => {
                     onClick={() => handleCardClick(shoe.id)}
                     key={shoe.id}
                     className='shoe-card'
-                    style={{ backgroundColor: shoe.colorHex }}
                 >
                     <h1>{shoe.name}</h1>
                     <img alt={shoe.name} src={shoe.imageUrl} />

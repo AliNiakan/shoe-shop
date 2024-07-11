@@ -9,6 +9,7 @@
 .shoe-card {
     cursor: pointer;
     color: white;
+    background-color:rgba(0, 13, 85, 0.233);
     border-radius: 8px;
     height: 200px;
     width: 150px;
