@@ -16,6 +16,10 @@ const Header: React.FC = () => {
   const handleViewModelsClick = () => {
     navigate('/models')
   }
+  const handleLoginClick = () => {
+    navigate('/login')
+  }
+
 
   return (
     <div className='header'>
@@ -28,7 +32,7 @@ const Header: React.FC = () => {
           <li>About</li>
           <li>Contact us</li>
           <li onClick={handleViewModelsClick}>View Models</li>
-          <li>Help me</li>
+          <li onClick={handleLoginClick}>Login</li>
         </ul>
       </div>
 
