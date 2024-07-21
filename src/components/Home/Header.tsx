@@ -19,6 +19,10 @@ const Header: React.FC = () => {
   const handleLoginClick = () => {
     navigate('/login')
   }
+  const handleUserSettingClick = () => {
+    navigate('/user-setting')
+  }
+
 
 
   return (
@@ -38,7 +42,7 @@ const Header: React.FC = () => {
 
       <div className='header-panel'>
         <ul>
-          <li>
+          <li onClick={handleUserSettingClick}>
             <FontAwesomeIcon icon={faUser} />
           </li>
           <li onClick={handleCartClick}>

@@ -18,6 +18,7 @@ import { selectShoe } from './store/shoeSlice';
 import ModelsPage from './components/Models/ModelsPage';
 import DetailsPage from './components/Details/DetailsPage';
 import Authentication from './components/Authentication/Authentication';
+import UserSetting from './components/UserSetting/UserSetting';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -60,6 +61,7 @@ const App: React.FC = () => {
         <Route path="/models" element={<ModelsPage />} />
         <Route path="/shoe" element={<DetailsPage />} />
         <Route path="/login" element={<Authentication />} />
+        <Route path="/user-setting" element={<UserSetting />} />
       </Routes>
     </Router>
   );
