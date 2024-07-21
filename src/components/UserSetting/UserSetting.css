@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 .user-setting-container {
+    font-family: "Nunito", sans-serif;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.user-setting-container h2{
+    text-align: center;
 }
 
 .user-setting-form {
@@ -13,35 +19,33 @@
     flex-direction: column;
 }
 
+
+
 .user-setting-form label {
     display: block;
     margin-bottom: 10px;
 }
 
-.user-setting-form input,
-.user-setting-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
+.user-setting-form input {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.user-setting-form input:focus {
+    transform: scale(1.03);
 }
 
 .user-setting-form input[type="text"],
 .user-setting-form input[type="email"],
-.user-setting-form input[type="password"],
-.user-setting-form textarea {
+.user-setting-form input[type="password"] {
     width: calc(100% - 30px);
     padding: 8px;
     margin-bottom: 10px;
+    outline: none !important;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 9px;
 }
 
-
-.user-setting-form textarea {
-    resize: vertical;
-}
 
 .address-container {
     display: flex;
