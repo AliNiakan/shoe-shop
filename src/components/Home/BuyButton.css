@@ -7,6 +7,8 @@
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
+    z-index: 1000;
+
 }
 
 .buy-button {
@@ -27,4 +29,23 @@
     background-color: #00aaff;
     border-color: #00aaff;
     box-shadow: 0 4px 6px rgba(0, 170, 255, 0.3);
+}
+@media (max-width: 768px) {
+    .buy-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 20px;
+    }
+
+    .buy-button-container {
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .buy-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 18px;
+    }
 }

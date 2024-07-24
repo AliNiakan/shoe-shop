@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
+
 .main-logo {
     display: flex;
     align-items: center;
     justify-content: center;
     text-shadow: 2px 2px 500px rgba(255, 255, 255, 0.548);
     margin-top: 50px;
+    z-index: 0;
 }
 
 .main-logo-text {
@@ -14,4 +16,12 @@
     letter-spacing: 1rem;
     user-select: none;
     transform: scale(1.5);
+}
+
+@media (max-width: 768px) {
+    .main-logo-text {
+        font-size: 5rem;
+        letter-spacing: 0;
+
+    }
 }

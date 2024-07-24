@@ -1,30 +1,58 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 25px 25px;
-    position: relative;
+    justify-content: space-between;
+    padding: 15px 25px;
+    position: relative; 
+    z-index: 1000;
 }
 
 .header-logo {
-    margin: 12px;
     height: 48.75px;
     width: 123.6px;
     filter: invert(100%) sepia(16%) saturate(7463%) hue-rotate(222deg) brightness(119%) contrast(115%);
-    position: absolute;
-    left: 20px;
 }
 
-.header-center {
-    flex: 1;
+.nav-links {
     display: flex;
-    justify-content: center;
-}
-.header-panel {
-    justify-content: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.header-center ul,.header-panel ul {
+.nav-links li {
+    margin: 0 15px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    color: white;
+}
+
+.nav-links li:hover {
+    color: #00aaff;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: 0.3s;
+}
+
+.header-panel {
+    display: flex;
+}
+
+.header-panel ul {
     display: flex;
     color: white;
     list-style: none;
@@ -32,9 +60,8 @@
     margin: 0;
 }
 
-.header-center ul li, .header-panel ul li {
-    margin: 0 15px;
-    position: relative;
+.header-panel ul li {
+    margin: 0 10px;
     padding: 10px;
     cursor: pointer;
     font-family: 'Arial', sans-serif;
@@ -42,28 +69,29 @@
     transition: color 0.3s ease;
 }
 
-.header-center ul li:hover,.header-panel ul li:hover {
+.header-panel ul li:hover {
     color: #00aaff;
 }
 
-.header-center ul li::after,.header-panel ul li::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #00aaff;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
+@media (max-width: 768px) {
+    .header{
+        background-color: #333;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: #333;
+        top: 70px;
+        left: 0;
+    }
 
-.header-center ul li:hover::after,.header-panel ul li:hover::after {
-    transform: scaleX(1);
-}
+    .nav-links.active {
+        display: flex;
+    }
 
-
-.header-panel{
-    display: flex;
-    justify-content: center;
+    .burger {
+        display: flex;
+    }
 }

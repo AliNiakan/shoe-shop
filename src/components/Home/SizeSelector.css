@@ -1,6 +1,7 @@
 .size-selector {
     display: flex;
     flex-wrap: wrap;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -36,4 +37,16 @@
     font-size: 16px;
     margin: 0;
     padding: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .size-option {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+    }
+
+    .size-selector p {
+        font-size: 14px;
+    }
 }

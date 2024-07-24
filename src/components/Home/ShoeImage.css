@@ -1,9 +1,9 @@
-
 @keyframes slideInFromRight {
     0% {
         transform: translate(100vw, -50%);
         opacity: 0;
     }
+
     100% {
         transform: translate(-50%, -50%);
         opacity: 1;
@@ -15,7 +15,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;
+    z-index: 0;
     padding: 20px;
 }
 
@@ -24,9 +24,38 @@
 }
 
 .shoe-image {
-    max-width: 100%;
-    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
     display: block;
     margin: 0 auto;
     transform: rotate(20deg);
+}
+
+@media (max-width: 768px) {
+    .shoe-image {
+        max-width: 50vw;
+        max-height: 50vh;
+        margin-bottom: 100px;
+        transform: rotate(15deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .shoe-image {
+        max-width: 70vw;
+        max-height: 70vh;
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 320px) {
+    .shoe-image-container {
+        padding: 10px;
+    }
+
+    .shoe-image {
+        max-width: 60vw;
+        max-height: 60vh;
+        transform: rotate(5deg);
+    }
 }
