@@ -5,6 +5,7 @@ import { RootState } from '../../store';
 import Shoe from '../../models/Shoe';
 import './DetailsPage.css';
 import BuyButton from '../Home/BuyButton';
+import SizeSelector from '../Home/SizeSelector';
 
 const DetailsPage: React.FC = () => {
     const location = useLocation();
@@ -35,6 +36,10 @@ const DetailsPage: React.FC = () => {
                                 <h2 className="shoe-details-name">{shoe.name}</h2>
                                 <img className="shoe-details-image" src={shoe.imageUrl} alt={shoe.name} />
                                 <p className="shoe-details-price">Price: ${shoe.price}</p>
+                            </div>
+                            <div className='shoe-size-container'>
+                                <h3 className="shoe-details-name">Available sizes</h3>
+                                <SizeSelector />
                             </div>
                             <hr />
                             <div className='shoe-caption'>
