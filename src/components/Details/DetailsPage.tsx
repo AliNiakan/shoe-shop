@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import Shoe from '../../models/Shoe';
 import './DetailsPage.css';
+import { selectShoe } from '../../store/shoeSlice';
 import BuyButton from '../Home/BuyButton';
 import SizeSelector from '../Home/SizeSelector';
 
 const DetailsPage: React.FC = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
     const searchParams = new URLSearchParams(location.search);
     const shoeId = searchParams.get('id');
 
@@ -18,12 +20,13 @@ const DetailsPage: React.FC = () => {
 
     useEffect(() => {
         if (shoe) {
+            dispatch(selectShoe(shoe.id)); 
             document.body.style.backgroundColor = shoe.colorHex;
         }
         return () => {
             document.body.style.backgroundColor = '';
         };
-    }, [shoe]);
+    }, [shoe, dispatch]);
 
     return (
         <div className="details-container">
