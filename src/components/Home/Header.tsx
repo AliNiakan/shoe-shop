@@ -29,6 +29,12 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // Admin routes :
+  const handleAdminPanelClick = () => {
+    navigate('/admin-dashbord');
+    setIsMenuOpen(false);
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -40,10 +46,10 @@ const Header: React.FC = () => {
       <div className='header-center'>
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <li onClick={handleHomeClick}>Home</li>
-          <li>About</li>
           <li>Contact us</li>
           <li onClick={handleViewModelsClick}>View Models</li>
           <li onClick={handleLoginClick}>Login</li>
+          <li onClick={handleAdminPanelClick} className='gold'>Admin Panel</li>
         </ul>
       </div>
 
