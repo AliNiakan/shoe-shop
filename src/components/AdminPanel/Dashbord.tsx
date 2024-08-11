@@ -1,9 +1,12 @@
 import React from 'react'
 import './Dashbord.css'
+import AddShoe from './AddShoe'
 
 const Dashbord : React.FC = () => {
   return (
-    <div>Dashbord</div>
+    <div>
+        <AddShoe/>
+    </div>
   )
 }
 

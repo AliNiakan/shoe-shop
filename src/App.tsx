@@ -14,11 +14,11 @@ import './styles/reset.css'
 import './styles/App.css'
 import Shoe from './models/Shoe';
 import CartPage from './components/Cart/CartPage';
-import { selectShoe } from './store/shoeSlice';
 import ModelsPage from './components/Models/ModelsPage';
 import DetailsPage from './components/Details/DetailsPage';
 import Authentication from './components/Authentication/Authentication';
 import UserSetting from './components/UserSetting/UserSetting';
+import Dashbord from './components/AdminPanel/Dashbord';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -62,6 +62,8 @@ const App: React.FC = () => {
         <Route path="/shoe" element={<DetailsPage />} />
         <Route path="/login" element={<Authentication />} />
         <Route path="/user-setting" element={<UserSetting />} />
+
+        <Route path="/admin-dashbord" element={<Dashbord />} />
       </Routes>
     </Router>
   );
