@@ -26,10 +26,16 @@ const shoeSlice = createSlice({
     },
     addShoe: (state, action: PayloadAction<Shoe>) => {
       state.shoes.push(action.payload);
+    },
+    updateShoe: (state, action: PayloadAction<Shoe>) => {
+      const index = state.shoes.findIndex((shoe) => shoe.id === action.payload.id);
+      if (index !== -1) {
+        state.shoes[index] = action.payload;
+      }
     }
   },
 });
 
-export const { selectShoe, addShoe } = shoeSlice.actions;
+export const { selectShoe, addShoe,updateShoe } = shoeSlice.actions;
 
 export default shoeSlice.reducer;

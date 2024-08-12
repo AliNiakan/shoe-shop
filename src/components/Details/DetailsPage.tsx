@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { RootState } from '../../store';
 import Shoe from '../../models/Shoe';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import './DetailsPage.css';
 import { selectShoe } from '../../store/shoeSlice';
 import BuyButton from '../Home/BuyButton';
@@ -11,6 +14,7 @@ import SizeSelector from '../Home/SizeSelector';
 const DetailsPage: React.FC = () => {
     const location = useLocation();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const searchParams = new URLSearchParams(location.search);
     const shoeId = searchParams.get('id');
 
@@ -20,13 +24,17 @@ const DetailsPage: React.FC = () => {
 
     useEffect(() => {
         if (shoe) {
-            dispatch(selectShoe(shoe.id)); 
+            dispatch(selectShoe(shoe.id));
             document.body.style.backgroundColor = shoe.colorHex;
         }
         return () => {
             document.body.style.backgroundColor = '';
         };
     }, [shoe, dispatch]);
+
+    const handleEditClick = () => {
+        navigate(`/edit?id=${shoeId}`);
+      };
 
     return (
         <div className="details-container">
@@ -44,6 +52,13 @@ const DetailsPage: React.FC = () => {
                                 <h3 className="shoe-details-name">Available sizes</h3>
                                 <SizeSelector />
                             </div>
+
+                            {/* Only Admin access */}
+                            <div onClick={handleEditClick} className='edit-button'>
+                                <FontAwesomeIcon icon={faEdit} />
+                            </div>
+                            {/* Only Admin access */}
+
                             <hr />
                             <div className='shoe-caption'>
                                 <p>The standard Lorem Ipsum passage, used since the 1500s

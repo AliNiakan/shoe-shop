@@ -19,6 +19,7 @@ import DetailsPage from './components/Details/DetailsPage';
 import Authentication from './components/Authentication/Authentication';
 import UserSetting from './components/UserSetting/UserSetting';
 import Dashbord from './components/AdminPanel/Dashbord';
+import EditShoe from './components/AdminPanel/EditShoe';
 
 const DynamicBackground = createGlobalStyle<{ backgroundColor: string }>`
   body {
@@ -64,6 +65,7 @@ const App: React.FC = () => {
         <Route path="/user-setting" element={<UserSetting />} />
 
         <Route path="/admin-dashbord" element={<Dashbord />} />
+        <Route path="/edit" element={<EditShoe />} />
       </Routes>
     </Router>
   );
