@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Shoe from '../../models/Shoe';
 import { RootState } from '../../store';
-import { updateShoe } from '../../store/shoeSlice';
+import { updateShoe, deleteShoe } from '../../store/shoeSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPlus, faCheck } from '@fortawesome/free-solid-svg-icons'
 
@@ -47,6 +47,12 @@ const EditShoe: React.FC = () => {
       navigate('/');
     }
   };
+
+  const handleDeleteShoe = (e: React.FormEvent) => {
+    e.preventDefault();
+    dispatch(deleteShoe(parseInt(shoeId || '')));
+    navigate('/');
+  }
 
   return (
     <div className='edit-shoe-container'>
@@ -113,6 +119,10 @@ const EditShoe: React.FC = () => {
       ) : (
         <p>Shoe not found.</p>
       )}
+
+      <button onClick={handleDeleteShoe} className='delete-button'>
+        Delete this shoe
+      </button>
     </div>
   );
 };

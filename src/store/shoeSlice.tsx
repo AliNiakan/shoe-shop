@@ -32,10 +32,16 @@ const shoeSlice = createSlice({
       if (index !== -1) {
         state.shoes[index] = action.payload;
       }
-    }
+    },
+    deleteShoe: (state, action: PayloadAction<number>) => {
+      state.shoes = state.shoes.filter(shoe => shoe.id !== action.payload);
+      if (state.selectedShoeId === action.payload) {
+        state.selectedShoeId = state.shoes.length > 0 ? state.shoes[0].id : null;
+      }
+    },
   },
 });
 
-export const { selectShoe, addShoe,updateShoe } = shoeSlice.actions;
+export const { selectShoe, addShoe, updateShoe, deleteShoe } = shoeSlice.actions;
 
 export default shoeSlice.reducer;
