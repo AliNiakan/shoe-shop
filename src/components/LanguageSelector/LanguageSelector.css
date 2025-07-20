@@ -1,0 +1,11 @@
+.language-selector {
+  margin-right: 20px;
+}
+
+.language-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
