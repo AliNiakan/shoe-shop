@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -45,15 +48,16 @@ const Header: React.FC = () => {
         src='https://i.pinimg.com/originals/20/60/2d/20602d43cc993811e5a6bd1886af4f33.png' alt='Logo' />
       <div className='header-center'>
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li onClick={handleHomeClick}>Home</li>
-          <li>Contact us</li>
-          <li onClick={handleViewModelsClick}>View Models</li>
-          <li onClick={handleLoginClick}>Login</li>
-          <li onClick={handleAdminPanelClick} className='gold'>Admin Panel</li>
+          <li onClick={handleHomeClick}>{t('home')}</li>
+          <li>{t('contactUs')}</li>
+          <li onClick={handleViewModelsClick}>{t('viewModels')}</li>
+          <li onClick={handleLoginClick}>{t('login')}</li>
+          <li onClick={handleAdminPanelClick} className='gold'>{t('adminPanel')}</li>
         </ul>
       </div>
 
       <div className='header-panel'>
+        <LanguageSelector />
         <ul>
           <li onClick={handleUserSettingClick}>
             <FontAwesomeIcon icon={faUser} />
